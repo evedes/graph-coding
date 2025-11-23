@@ -1,0 +1,21 @@
+services:
+  neo4j:
+    hostname: neo4j
+    image: neo4j:latest
+    container_name: graph-coding-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    env_file:
+      - ./neo4j/.env
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/seed:/seed
+      - ./neo4j/scripts:/scripts:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:7474"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

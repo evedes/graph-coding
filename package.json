@@ -1,0 +1,14 @@
+{
+  "name": "graph-coding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:up": "docker compose -f docker-compose.dev.yml up",
+    "dev:down": "docker compose -f docker-compose.dev.yml down --remove-orphans"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
